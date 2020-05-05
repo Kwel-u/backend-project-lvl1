@@ -1,0 +1,23 @@
+{
+    "name": "backend-project-kwel_u",
+    "version": "1.0.0",
+    "description": "brain games. Kwel",
+    "main": "brain-games.js",
+    "type": "module",
+    "bin": {
+        "brain-games": "bin/brain-games.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Kwel-u/backend-project-lvl1.git"
+    },
+    "author": "kwel-u",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Kwel-u/backend-project-lvl1/issues"
+    },
+    "homepage": "https://github.com/Kwel-u/backend-project-lvl1#readme"
+}
