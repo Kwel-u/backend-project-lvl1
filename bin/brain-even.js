@@ -4,3 +4,4 @@ import * as cli from '../src/cli.js';
 
 cli.sayWelcome();
 cli.greetOfUser();
+cli.startEvenGame();

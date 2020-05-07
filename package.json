@@ -1,31 +1,32 @@
 {
-    "name": "backend-project-kwel_u",
-    "version": "1.0.0",
-    "description": "brain games. Kwel",
-    "main": "brain-games.js",
-    "type": "module",
-    "bin": {
-        "brain-games": "bin/brain-games.js"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Kwel-u/backend-project-lvl1.git"
-    },
-    "author": "kwel-u",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Kwel-u/backend-project-lvl1/issues"
-    },
-    "homepage": "https://github.com/Kwel-u/backend-project-lvl1#readme",
-    "dependencies": {
-        "eslint": "^6.8.0",
-        "eslint-config-airbnb-base": "^14.1.0",
-        "eslint-plugin-import": "^2.20.2",
-        "eslint-plugin-jest": "^23.9.0",
-        "readline-sync": "^1.4.10",
-        "test": "^0.6.0"
-    }
+  "name": "backend-project-kwel_u",
+  "version": "1.0.0",
+  "description": "brain games. Kwel",
+  "main": "brain-games.js",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kwel-u/backend-project-lvl1.git"
+  },
+  "author": "kwel-u",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kwel-u/backend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Kwel-u/backend-project-lvl1#readme",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.9.0",
+    "readline-sync": "^1.4.10",
+    "test": "^0.6.0"
+  }
 }

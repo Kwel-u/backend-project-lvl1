@@ -1,7 +1,7 @@
 install: install-deps
 
-run:
-	bin/nodejs-package.js 10
+brain-games:
+	node bin/brain-games.js
 
 install-deps:
 	npm ci
@@ -16,6 +16,6 @@ lint:
 	npx eslint .
 
 publish:
-	npm publish
+	npm publish --dry-run
 
 .PHONY: test
