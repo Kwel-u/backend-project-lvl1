@@ -5,4 +5,7 @@ Yo)
 ![Node CI](https://github.com/Kwel-u/backend-project-lvl1/workflows/Node%20CI/badge.svg)
 
 # example
-https://asciinema.org/a/iWrIaI2mYf9xBKKhxWREkXa1x
+### brain-even
+[![asciicast](https://asciinema.org/a/pOcoht7c6JHIDT5G5SjQpYZFI.svg)](https://asciinema.org/a/pOcoht7c6JHIDT5G5SjQpYZFI)
+### brain-calc
+[![asciicast](https://asciinema.org/a/6Ahf5pDn6NVOw3gz21jBDKaMH.svg)](https://asciinema.org/a/6Ahf5pDn6NVOw3gz21jBDKaMH)

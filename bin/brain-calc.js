@@ -5,4 +5,4 @@ import startGame from '../src/games/index.js';
 
 cli.sayWelcome();
 cli.greetOfUser();
-startGame('evengame');
+startGame('calcgame');
