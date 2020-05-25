@@ -1,27 +1,34 @@
 import readlineSync from 'readline-sync';
 
-let nameuser;
+let nameUser;
 
 const sayWelcome = () => console.log('Welcome to the Brain Games!');
 
 const getNameOfUser = () => readlineSync.question('May I have your name? ');
 
 const greetOfUser = () => {
-  nameuser = getNameOfUser();
-  console.log(`Hello, ${nameuser}!`);
+  nameUser = getNameOfUser();
+  console.log(`Hello, ${nameUser}!`);
 };
 
-const showRules = (namegame) => {
-  switch (namegame) {
+const showRules = (nameGame) => {
+  switch (nameGame) {
     case 'evengame':
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
       break;
     case 'calcgame':
       console.log('What is the result of the expression?');
       break;
+    case 'gcdgame':
+      console.log('Find the greatest common divisor of given numbers.');
+      break;
     default:
-      console.log(`Unknown game '${namegame}'`);
+      console.log(`Unknown game '${nameGame}'`);
   }
+};
+
+const printCorrect = () => {
+  console.log('Correct!');
 };
 
 const getAnswer = (question) => {
@@ -31,18 +38,19 @@ const getAnswer = (question) => {
 };
 
 const toHailUser = () => {
-  console.log(`Congratulations, ${nameuser}!`);
+  console.log(`Congratulations, ${nameUser}!`);
 };
 
-const toCheerUser = (useranswer, correctanswer) => {
-  console.log(`"${useranswer}" is wrong answer ;(. Correct answer was "${correctanswer}".`);
-  console.log(`Let's try again, ${nameuser}!`);
+const toCheerUser = (userAnswer, correctАnswer) => {
+  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctАnswer}".`);
+  console.log(`Let's try again, ${nameUser}!`);
 };
 
 export {
   sayWelcome,
   greetOfUser,
   showRules,
+  printCorrect,
   getAnswer,
   toHailUser,
   toCheerUser,

@@ -7,4 +7,4 @@ const countQuestion = 3;
 
 cli.sayWelcome();
 cli.greetOfUser();
-startGame('calcgame', countQuestion);
+startGame('gcdgame', countQuestion);
