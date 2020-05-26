@@ -25,6 +25,9 @@ const showRules = (nameGame) => {
     case 'progressiongame':
       console.log('What number is missing in the progression?');
       break;
+    case 'primegame':
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+      break;
     default:
       console.log(`Unknown game '${nameGame}'`);
   }

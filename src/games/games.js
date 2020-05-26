@@ -2,6 +2,12 @@ import * as cli from '../cli.js';
 
 const isEven = (num) => num % 2 === 0;
 
+const isPrime = (num, previousnum) => {
+  if (num === previousnum) return true;
+  if (num % previousnum === 0) return false;
+  return isPrime(num, previousnum + 1);
+};
+
 const getRandomInt = (max) => Math.floor(Math.random() * max);
 
 const getGCD = (a, b) => {
@@ -9,14 +15,14 @@ const getGCD = (a, b) => {
   return getGCD(b, a % b);
 };
 
-const getNumberForEvenGame = () => {
+const getQuestionForEvenGame = () => {
   const randomNumber = getRandomInt(1000);
   const correctАnswer = (isEven(randomNumber) ? 'yes' : 'no');
 
   return [randomNumber, correctАnswer];
 };
 
-const getExpessionForCalcGame = () => {
+const getQuestionForCalcGame = () => {
   const operations = ['+', '-', '*'];
   const numberOperation = getRandomInt(operations.length);
   const [firstValue, secondeValue] = [getRandomInt(1000), getRandomInt(1000)];
@@ -34,7 +40,7 @@ const getExpessionForCalcGame = () => {
   }
 };
 
-const getNumbersForGameGCD = () => {
+const getQuestionForGameGCD = () => {
   const [firstValue, secondeValue] = [getRandomInt(200), getRandomInt(200)];
   const correctАnswer = getGCD(firstValue, secondeValue);
   const question = `${firstValue} ${secondeValue}`;
@@ -42,7 +48,7 @@ const getNumbersForGameGCD = () => {
   return [question, correctАnswer];
 };
 
-const getProgression = () => {
+const getQuestionForGameProgression = () => {
   const lenProgression = 10;
   const startNumberProgression = getRandomInt(100);
   const progression = [startNumberProgression];
@@ -59,21 +65,31 @@ const getProgression = () => {
   return [progression.join(' '), correctАnswer];
 };
 
+const getQuestionForPrimeGame = () => {
+  const randomNumber = getRandomInt(1000) + 1;
+  const correctАnswer = (isPrime(randomNumber, 2) ? 'yes' : 'no');
+
+  return [randomNumber, correctАnswer];
+};
+
 export default (nameGame) => {
   let question;
   let correctАnswer;
   switch (nameGame) {
     case 'evengame':
-      [question, correctАnswer] = getNumberForEvenGame();
+      [question, correctАnswer] = getQuestionForEvenGame();
       break;
     case 'calcgame':
-      [question, correctАnswer] = getExpessionForCalcGame();
+      [question, correctАnswer] = getQuestionForCalcGame();
       break;
     case 'gcdgame':
-      [question, correctАnswer] = getNumbersForGameGCD();
+      [question, correctАnswer] = getQuestionForGameGCD();
       break;
     case 'progressiongame':
-      [question, correctАnswer] = getProgression();
+      [question, correctАnswer] = getQuestionForGameProgression();
+      break;
+    case 'primegame':
+      [question, correctАnswer] = getQuestionForPrimeGame();
       break;
     default:
       break;
