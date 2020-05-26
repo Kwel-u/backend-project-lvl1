@@ -22,6 +22,9 @@ const showRules = (nameGame) => {
     case 'gcdgame':
       console.log('Find the greatest common divisor of given numbers.');
       break;
+    case 'progressiongame':
+      console.log('What number is missing in the progression?');
+      break;
     default:
       console.log(`Unknown game '${nameGame}'`);
   }

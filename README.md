@@ -11,3 +11,5 @@ Yo)
 [![asciicast](https://asciinema.org/a/6Ahf5pDn6NVOw3gz21jBDKaMH.svg)](https://asciinema.org/a/6Ahf5pDn6NVOw3gz21jBDKaMH)
 ### brain-gcd
 [![asciicast](https://asciinema.org/a/o7HA1jXioz6r1KpqEIIPv3EQf.svg)](https://asciinema.org/a/o7HA1jXioz6r1KpqEIIPv3EQf)
+### brain-progression
+[![asciicast](https://asciinema.org/a/B4qcg0F9c9A88NUZ4SKO1Gsxd.svg)](https://asciinema.org/a/B4qcg0F9c9A88NUZ4SKO1Gsxd)

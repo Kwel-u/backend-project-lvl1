@@ -21,22 +21,17 @@ const getExpessionForCalcGame = () => {
   const numberOperation = getRandomInt(operations.length);
   const [firstValue, secondeValue] = [getRandomInt(1000), getRandomInt(1000)];
   const question = `${firstValue} ${operations[numberOperation]} ${secondeValue}`;
-  let correctАnswer;
 
   switch (numberOperation) {
     case 0:
-      correctАnswer = firstValue + secondeValue;
-      break;
+      return [question, firstValue + secondeValue];
     case 1:
-      correctАnswer = firstValue - secondeValue;
-      break;
+      return [question, firstValue - secondeValue];
     case 2:
-      correctАnswer = firstValue * secondeValue;
-      break;
+      return [question, firstValue * secondeValue];
     default:
-      break;
+      return [];
   }
-  return [question, correctАnswer];
 };
 
 const getNumbersForGameGCD = () => {
@@ -45,6 +40,23 @@ const getNumbersForGameGCD = () => {
   const question = `${firstValue} ${secondeValue}`;
 
   return [question, correctАnswer];
+};
+
+const getProgression = () => {
+  const lenProgression = 10;
+  const startNumberProgression = getRandomInt(100);
+  const progression = [startNumberProgression];
+  const step = getRandomInt(50);
+  const randomIndexElement = getRandomInt(lenProgression);
+
+  for (let i = 1; i < lenProgression; i += 1) {
+    progression[i] = progression[i - 1] + step;
+  }
+
+  const correctАnswer = progression[randomIndexElement];
+  progression[randomIndexElement] = '..';
+
+  return [progression.join(' '), correctАnswer];
 };
 
 export default (nameGame) => {
@@ -59,6 +71,9 @@ export default (nameGame) => {
       break;
     case 'gcdgame':
       [question, correctАnswer] = getNumbersForGameGCD();
+      break;
+    case 'progressiongame':
+      [question, correctАnswer] = getProgression();
       break;
     default:
       break;
