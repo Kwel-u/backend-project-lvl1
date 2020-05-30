@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import * as cli from '../src/cli.js';
-import startGame from '../src/games/index.js';
+import {
+  getQuestionForGameProgression,
+  gameDescription,
+  countQuestion,
+} from '../src/games/progression.js';
+import startGame from '../src/index.js';
 
-const countQuestion = 3;
-
-cli.sayWelcome();
-cli.greetOfUser();
-startGame('progressiongame', countQuestion);
+startGame(getQuestionForGameProgression, gameDescription, countQuestion);
