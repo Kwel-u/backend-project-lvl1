@@ -3,14 +3,14 @@ install: install-deps
 install-deps:
 	npm ci
 
-test:
-	npm test
-
-test-coverage:
-	npm test -- --coverage
-
 lint:
 	npx eslint .
+
+link:
+	npm link
+
+unlink:
+	npm unlink
 
 publish:
 	npm publish --dry-run

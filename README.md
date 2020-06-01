@@ -4,6 +4,35 @@ Yo)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 ![Node CI](https://github.com/Kwel-u/backend-project-lvl1/workflows/Node%20CI/badge.svg)
 
+## Installation
+### From NPM
+```sh
+$ npm i backend-project-kwel_u
+```
+### From GitHub
+```sh
+$ git clone https://github.com/Kwel-u/backend-project-lvl1.git
+$ make publish
+$ make link
+```
+
+## Usage
+```sh
+$ brain-even
+```
+
+## Available commands
+```sh
+$ make lint
+$ make unlink
+$ brain-even
+$ brain-calc
+$ brain-gcd
+$ brain-progression
+$ brain-prime
+$ brain-games
+```
+
 # example
 ### brain-even
 [![asciicast](https://asciinema.org/a/V3hFFfQqplnkcOMo7vROjcrRs.svg)](https://asciinema.org/a/V3hFFfQqplnkcOMo7vROjcrRs)

@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-import {
-  getQuestionForGameGCD,
-  gameDescription,
-  countQuestion,
-} from '../src/games/gcd.js';
-import startGame from '../src/index.js';
+import startGame from '../src/games/gcd.js';
 
-startGame(getQuestionForGameGCD, gameDescription, countQuestion);
+startGame();

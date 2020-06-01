@@ -1,23 +1,16 @@
 import readlineSync from 'readline-sync';
 
-let nameUser;
-
 const sayWelcome = () => console.log('Welcome to the Brain Games!');
 
-const getNameOfUser = () => readlineSync.question('May I have your name? ');
+const getNameUser = () => readlineSync.question('May I have your name? ');
 
-const greetOfUser = () => {
-  nameUser = getNameOfUser();
-  console.log(`Hello, ${nameUser}!`);
-};
+const showRules = (gameDescription) => console.log(gameDescription);
 
-const showRules = (gameDescription) => {
-  console.log(gameDescription);
-};
+const printCorrect = () => console.log('Correct!');
 
-const printCorrect = () => {
-  console.log('Correct!');
-};
+const hailUser = (nameUser) => console.log(`Congratulations, ${nameUser}!`);
+
+const greetUser = (nameUser) => console.log(`Hello, ${nameUser}!`);
 
 const getAnswer = (question) => {
   console.log(`Question: ${question}`);
@@ -25,21 +18,18 @@ const getAnswer = (question) => {
   return readlineSync.question('Your answer: ');
 };
 
-const toHailUser = () => {
-  console.log(`Congratulations, ${nameUser}!`);
-};
-
-const toCheerUser = (userAnswer, correctАnswer) => {
+const cheerUser = (userAnswer, correctАnswer, nameUser) => {
   console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctАnswer}".`);
   console.log(`Let's try again, ${nameUser}!`);
 };
 
 export {
+  getNameUser,
   sayWelcome,
-  greetOfUser,
+  greetUser,
   showRules,
   printCorrect,
   getAnswer,
-  toHailUser,
-  toCheerUser,
+  hailUser,
+  cheerUser,
 };

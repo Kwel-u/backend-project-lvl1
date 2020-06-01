@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-import {
-  getQuestionForPrimeGame,
-  gameDescription,
-  countQuestion,
-} from '../src/games/prime.js';
-import startGame from '../src/index.js';
+import startGame from '../src/games/prime.js';
 
-startGame(getQuestionForPrimeGame, gameDescription, countQuestion);
+startGame();

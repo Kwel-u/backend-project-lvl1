@@ -1,28 +1,32 @@
-import getRandomInt from '../utilities.js';
+import getRandomInt from '../utils.js';
+import startGame from '../index.js';
 
-const countQuestion = 3;
 const gameDescription = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const getQuestionForCalcGame = () => {
-  const numberOperation = getRandomInt(0, operations.length - 1);
-  const [firstValue, secondeValue] = [getRandomInt(1, 100), getRandomInt(1, 100)];
-  const question = `${firstValue} ${operations[numberOperation]} ${secondeValue}`;
-
-  switch (numberOperation) {
-    case 0:
-      return [question, firstValue + secondeValue];
-    case 1:
-      return [question, firstValue - secondeValue];
-    case 2:
-      return [question, firstValue * secondeValue];
+const getResultExpression = (firstValue, secondeValue, operation) => {
+  switch (operation) {
+    case '+':
+      return firstValue + secondeValue;
+    case '-':
+      return firstValue + secondeValue;
+    case '*':
+      return firstValue + secondeValue;
     default:
-      return [];
+      return null;
   }
 };
 
-export {
-  getQuestionForCalcGame,
-  gameDescription,
-  countQuestion,
+const getQuestionCalcGame = () => {
+  const numberOperation = getRandomInt(0, operations.length - 1);
+  const firstValue = getRandomInt(1, 100);
+  const secondeValue = getRandomInt(1, 100);
+  const question = `${firstValue} ${operations[numberOperation]} ${secondeValue}`;
+  const answer = getResultExpression(firstValue, secondeValue, operations[numberOperation]);
+
+  return [question, answer];
+};
+
+export default () => {
+  startGame(getQuestionCalcGame, gameDescription);
 };

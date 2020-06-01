@@ -1,27 +1,39 @@
-import * as cli from './cli.js';
+import {
+  sayWelcome,
+  getNameUser,
+  greetUser,
+  showRules,
+  printCorrect,
+  getAnswer,
+  hailUser,
+  cheerUser,
+} from './cli.js';
 
-const askUser = (getQuestion) => {
+const countQuestion = 3;
+
+const askUser = (getQuestion, nameUser) => {
   const [question, correctАnswer] = getQuestion();
 
-  const useranswer = cli.getAnswer(question);
+  const userAnswer = getAnswer(question);
 
-  if (String(useranswer) === String(correctАnswer)) {
-    cli.printCorrect();
+  if (String(userAnswer) === String(correctАnswer)) {
+    printCorrect();
     return true;
   }
-  cli.toCheerUser(useranswer, correctАnswer);
+  cheerUser(userAnswer, correctАnswer, nameUser);
   return false;
 };
 
-export default (getQuestion, gameDescription, countQuestion) => {
-  cli.sayWelcome();
-  cli.greetOfUser();
-  cli.showRules(gameDescription);
+export default (getQuestion, gameDescription) => {
+  sayWelcome();
+  const nameUser = getNameUser();
+  greetUser(nameUser);
+  showRules(gameDescription);
 
   for (let question = 0; question < countQuestion; question += 1) {
-    if (!askUser(getQuestion)) {
+    if (!askUser(getQuestion, nameUser)) {
       return;
     }
   }
-  cli.toHailUser();
+  hailUser(nameUser);
 };

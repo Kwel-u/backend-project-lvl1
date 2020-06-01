@@ -1,10 +1,10 @@
-import getRandomInt from '../utilities.js';
+import getRandomInt from '../utils.js';
+import startGame from '../index.js';
 
-const countQuestion = 3;
 const gameDescription = 'What number is missing in the progression?';
 const lenProgression = 10;
 
-const getQuestionForGameProgression = () => {
+const getQuestionGameProgression = () => {
   const startNumberProgression = getRandomInt(1, 100);
   const progression = [startNumberProgression];
   const step = getRandomInt(1, 50);
@@ -21,8 +21,6 @@ const getQuestionForGameProgression = () => {
 };
 
 
-export {
-  getQuestionForGameProgression,
-  gameDescription,
-  countQuestion,
+export default () => {
+  startGame(getQuestionGameProgression, gameDescription);
 };
