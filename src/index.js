@@ -26,7 +26,7 @@ export default (getRound, gameDescription, roundCount) => {
   greetUser(userName);
   showRules(gameDescription);
 
-  for (let question = 0; question < roundCount; question += 1) {
+  for (let round = 0; round < roundCount; round += 1) {
     const [question, correctАnswer] = getRound();
     const isCorrectAnswer = askUser(question, correctАnswer, userName);
     if (!isCorrectAnswer) {
