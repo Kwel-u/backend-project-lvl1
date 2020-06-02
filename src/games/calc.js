@@ -1,32 +1,34 @@
-import getRandomInt from '../utils.js';
+import { getRandomInt } from '../utils.js';
+import { roundCount } from './const.js';
 import startGame from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
-const operations = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
-const getResultExpression = (firstValue, secondeValue, operation) => {
-  switch (operation) {
+const calculate = (firstValue, secondValue, operator) => {
+  switch (operator) {
     case '+':
-      return firstValue + secondeValue;
+      return firstValue + secondValue;
     case '-':
-      return firstValue + secondeValue;
+      return firstValue - secondValue;
     case '*':
-      return firstValue + secondeValue;
+      return firstValue * secondValue;
     default:
-      return null;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
-const getQuestionCalcGame = () => {
-  const numberOperation = getRandomInt(0, operations.length - 1);
+const getRound = () => {
+  const index = getRandomInt(0, operators.length - 1);
+  const operator = operators[index];
   const firstValue = getRandomInt(1, 100);
-  const secondeValue = getRandomInt(1, 100);
-  const question = `${firstValue} ${operations[numberOperation]} ${secondeValue}`;
-  const answer = getResultExpression(firstValue, secondeValue, operations[numberOperation]);
+  const secondValue = getRandomInt(1, 100);
+  const question = `${firstValue} ${operator} ${secondValue}`;
+  const correctАnswer = String(calculate(firstValue, secondValue, operator));
 
-  return [question, answer];
+  return [question, correctАnswer];
 };
 
 export default () => {
-  startGame(getQuestionCalcGame, gameDescription);
+  startGame(getRound, gameDescription, roundCount);
 };

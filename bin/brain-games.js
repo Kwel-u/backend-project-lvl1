@@ -2,10 +2,12 @@
 
 import {
   sayWelcome,
-  getNameUser,
+  getUserName,
   greetUser,
 } from '../src/cli.js';
 
-
 sayWelcome();
-greetUser(getNameUser());
+
+const userName = getUserName();
+
+greetUser(userName);

@@ -7,6 +7,7 @@ lint:
 	npx eslint .
 
 link:
+	npm install
 	npm link
 
 unlink:
@@ -14,5 +15,3 @@ unlink:
 
 publish:
 	npm publish --dry-run
-
-.PHONY: test

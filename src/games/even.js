@@ -1,17 +1,18 @@
-import getRandomInt from '../utils.js';
+import { getRandomInt } from '../utils.js';
+import { roundCount } from './const.js';
 import startGame from '../index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
-const getQuestionEvenGame = () => {
-  const randomNumber = getRandomInt(1, 1000);
-  const correctАnswer = (isEven(randomNumber) ? 'yes' : 'no');
+const getRound = () => {
+  const question = getRandomInt(1, 1000);
+  const correctАnswer = isEven(question) ? 'yes' : 'no';
 
-  return [randomNumber, correctАnswer];
+  return [question, correctАnswer];
 };
 
 export default () => {
-  startGame(getQuestionEvenGame, gameDescription);
+  startGame(getRound, gameDescription, roundCount);
 };

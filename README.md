@@ -12,7 +12,6 @@ $ npm i backend-project-kwel_u
 ### From GitHub
 ```sh
 $ git clone https://github.com/Kwel-u/backend-project-lvl1.git
-$ make publish
 $ make link
 ```
 

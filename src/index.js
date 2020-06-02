@@ -1,6 +1,6 @@
 import {
   sayWelcome,
-  getNameUser,
+  getUserName,
   greetUser,
   showRules,
   printCorrect,
@@ -9,31 +9,29 @@ import {
   cheerUser,
 } from './cli.js';
 
-const countQuestion = 3;
-
-const askUser = (getQuestion, nameUser) => {
-  const [question, correctАnswer] = getQuestion();
-
+const askUser = (question, correctАnswer, userName) => {
   const userAnswer = getAnswer(question);
 
-  if (String(userAnswer) === String(correctАnswer)) {
+  if (userAnswer === correctАnswer) {
     printCorrect();
     return true;
   }
-  cheerUser(userAnswer, correctАnswer, nameUser);
+  cheerUser(userAnswer, correctАnswer, userName);
   return false;
 };
 
-export default (getQuestion, gameDescription) => {
+export default (getRound, gameDescription, roundCount) => {
   sayWelcome();
-  const nameUser = getNameUser();
-  greetUser(nameUser);
+  const userName = getUserName();
+  greetUser(userName);
   showRules(gameDescription);
 
-  for (let question = 0; question < countQuestion; question += 1) {
-    if (!askUser(getQuestion, nameUser)) {
+  for (let question = 0; question < roundCount; question += 1) {
+    const [question, correctАnswer] = getRound();
+    const isCorrectAnswer = askUser(question, correctАnswer, userName);
+    if (!isCorrectAnswer) {
       return;
     }
   }
-  hailUser(nameUser);
+  hailUser(userName);
 };
