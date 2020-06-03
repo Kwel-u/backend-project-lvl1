@@ -1,5 +1,5 @@
 import { getRandomInt } from '../utils.js';
-import { roundCount } from './const.js';
+import { roundCount } from '../const.js';
 import startGame from '../index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';

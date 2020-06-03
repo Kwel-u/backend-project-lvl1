@@ -7,7 +7,6 @@ lint:
 	npx eslint .
 
 link:
-	npm install
 	npm link
 
 unlink:

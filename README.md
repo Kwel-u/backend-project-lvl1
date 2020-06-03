@@ -15,6 +15,11 @@ $ git clone https://github.com/Kwel-u/backend-project-lvl1.git
 $ make link
 ```
 
+### Remember to install dependencies
+```sh
+$ npm install
+```
+
 ## Usage
 ```sh
 $ brain-even

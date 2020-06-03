@@ -9,9 +9,9 @@ import {
   cheerUser,
 } from './cli.js';
 
-const askUser = (question, correctАnswer, userName) => {
-  const userAnswer = getAnswer(question);
+const askUser = (question) => getAnswer(question);
 
+const checkUserAnswer = (userAnswer, correctАnswer, userName) => {
   if (userAnswer === correctАnswer) {
     printCorrect();
     return true;
@@ -28,7 +28,8 @@ export default (getRound, gameDescription, roundCount) => {
 
   for (let round = 0; round < roundCount; round += 1) {
     const [question, correctАnswer] = getRound();
-    const isCorrectAnswer = askUser(question, correctАnswer, userName);
+    const userAnswer = askUser(question);
+    const isCorrectAnswer = checkUserAnswer(userAnswer, correctАnswer, userName);
     if (!isCorrectAnswer) {
       return;
     }

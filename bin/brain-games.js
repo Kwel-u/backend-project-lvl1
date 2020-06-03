@@ -7,7 +7,5 @@ import {
 } from '../src/cli.js';
 
 sayWelcome();
-
 const userName = getUserName();
-
 greetUser(userName);
