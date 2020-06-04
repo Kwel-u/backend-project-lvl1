@@ -11,15 +11,6 @@ import {
 
 const askUser = (question) => getAnswer(question);
 
-const checkUserAnswer = (userAnswer, correctАnswer, userName) => {
-  if (userAnswer === correctАnswer) {
-    printCorrect();
-    return true;
-  }
-  cheerUser(userAnswer, correctАnswer, userName);
-  return false;
-};
-
 export default (getRound, gameDescription, roundCount) => {
   sayWelcome();
   const userName = getUserName();
@@ -29,8 +20,10 @@ export default (getRound, gameDescription, roundCount) => {
   for (let round = 0; round < roundCount; round += 1) {
     const [question, correctАnswer] = getRound();
     const userAnswer = askUser(question);
-    const isCorrectAnswer = checkUserAnswer(userAnswer, correctАnswer, userName);
-    if (!isCorrectAnswer) {
+    if (userAnswer === correctАnswer) {
+      printCorrect();
+    } else {
+      cheerUser(userAnswer, correctАnswer, userName);
       return;
     }
   }
