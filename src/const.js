@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
-const roundCount = 3;
+const roundsCount = 3;
 
 export {
-  roundCount,
+  roundsCount,
 };

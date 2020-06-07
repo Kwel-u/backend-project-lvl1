@@ -1,28 +1,23 @@
+import readlineSync from 'readline-sync';
+
 import {
-  sayWelcome,
-  getUserName,
-  greetUser,
-  showRules,
-  printCorrect,
   getAnswer,
-  hailUser,
   cheerUser,
 } from './cli.js';
 
-export default (getRound, gameDescription, roundCount) => {
-  sayWelcome();
-  const userName = getUserName();
-  greetUser(userName);
-  showRules(gameDescription);
+export default (getRound, gameDescription, roundsCount) => {
+  const userName = readlineSync.question('Welcome to the Brain Games!\nMay I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(gameDescription);
 
-  for (let round = 0; round < roundCount; round += 1) {
+  for (let round = 0; round < roundsCount; round += 1) {
     const [question, correctАnswer] = getRound();
     const userAnswer = getAnswer(question);
     if (userAnswer !== correctАnswer) {
       cheerUser(userAnswer, correctАnswer, userName);
       return;
     }
-    printCorrect();
+    console.log('Correct!');
   }
-  hailUser(userName);
+  console.log(`Congratulations, ${userName}!`);
 };

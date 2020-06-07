@@ -1,5 +1,5 @@
 import { getRandomInt } from '../utils.js';
-import { roundCount } from '../const.js';
+import { roundsCount } from '../const.js';
 import startGame from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
@@ -30,5 +30,5 @@ const getRound = () => {
 };
 
 export default () => {
-  startGame(getRound, gameDescription, roundCount);
+  startGame(getRound, gameDescription, roundsCount);
 };
